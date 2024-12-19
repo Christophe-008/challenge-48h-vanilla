@@ -1,3 +1,5 @@
+import { uploadTo } from "./queries/upload-picture.js";
+
 export const camera = (() => {
     if (document.querySelector(".page-event")) {
         const video = document.getElementById("video");
@@ -22,9 +24,15 @@ export const camera = (() => {
 
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-            const dataURL = canvas.toDataURL("image/png");
+            const dataURL = canvas.toDataURL("image/jpg");
 
             photo.src = dataURL;
+
+            // Convertir l'image en Blob
+            canvas.toBlob(async (blob) => {
+                // Envoyer la photo à Supabase
+                await uploadTo(blob);
+            }, "image/jpg");
         });
     }
 })();

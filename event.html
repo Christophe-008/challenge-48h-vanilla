@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>event</title>
+        <link rel="stylesheet" href="./assets/css/app.css" />
         <script type="module" src="./assets/js/app.js"></script>
     </head>
     <body class="page-event">
@@ -22,11 +23,22 @@
                 <h1>Welcome event: <small class="uuid"></small></h1>
             </section>
             <section>
-                <button id="picture">take picture</button>
+                <div class="camera">
+                    <video id="video">Video stream not available.</video>
+                </div>
+                <button class="button" id="picture">take photo</button>
+                <canvas id="canvas" style="display: none"></canvas>
+                <div class="output">
+                    <img
+                        id="photo"
+                        src="https://placehold.co/600x400"
+                        alt="The screen capture will appear in this box."
+                    />
+                </div>
             </section>
             <section>
                 <div id="galery">
-                    <h2>gall</h2>
+                    <h2>🚀 gallery</h2>
                 </div>
             </section>
         </main>

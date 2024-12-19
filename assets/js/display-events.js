@@ -1,13 +1,13 @@
 // import { qrCodeGen } from "./qrcode-gen.js";
 export function displayEvents(events) {
     const linkUrl = "./event.html?uuid=";
-    const linkQr =
-        window.location.href.substring(
-            0,
-            window.location.href.lastIndexOf("/") + 1
-        ) + "event.html?uuid=";
+    const baseUrl = new URL(window.location.href);
+    baseUrl.pathname =
+        baseUrl.pathname.substring(0, baseUrl.pathname.lastIndexOf("/") + 1) +
+        "event.html";
+    const linkQr = `${baseUrl.href}?uuid=`;
     events.forEach((event) => {
-        console.log(event);
+        // console.log(event);
         const list = document.querySelector("#list");
         const template = document.querySelector("#event");
         const clone = template.content.cloneNode(true);

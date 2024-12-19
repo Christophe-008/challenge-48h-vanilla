@@ -1,3 +1,5 @@
+import { camera } from "./camera.js";
+
 export const getUuid = () => {
     if (document.querySelector(".page-event")) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -5,6 +7,8 @@ export const getUuid = () => {
         // console.log(uuid);
         document.querySelector(".uuid").textContent = uuid;
         addUuidLocalStorage(uuid);
+
+        camera;
     }
 };
 

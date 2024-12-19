@@ -1,4 +1,5 @@
 import { camera } from "./camera.js";
+import { getAllPictures } from "./queries/get-all-pictures-by-uuid.js";
 
 export const getUuid = () => {
     if (document.querySelector(".page-event")) {
@@ -9,6 +10,7 @@ export const getUuid = () => {
         addUuidLocalStorage(uuid);
 
         camera;
+        getAllPictures();
     }
 };
 

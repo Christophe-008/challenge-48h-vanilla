@@ -1,6 +1,10 @@
 // import { qrCodeGen } from "./qrcode-gen.js";
 export function displayEvents(events) {
     const linkUrl = "./event.html?uuid=";
+    const linkQr = window.location.href.substring(
+        0,
+        window.location.href.lastIndexOf("/") + 1
+    );
     events.forEach((event) => {
         console.log(event);
         const list = document.querySelector("#list");
@@ -20,7 +24,7 @@ export function displayEvents(events) {
         const qrCode = clone.querySelector(".qrcode");
 
         const qr = qrcode(0, "L"); // Niveau 0, correction d'erreur 'L'
-        qr.addData(`${linkUrl}${event.uuid}`); // URL à encoder
+        qr.addData(`${linkQr}${event.uuid}`); // URL à encoder
         qr.make();
 
         qrCode.innerHTML = qr.createSvgTag();

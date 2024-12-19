@@ -1,6 +1,6 @@
 // import { qrCodeGen } from "./qrcode-gen.js";
 export function displayEvents(events) {
-    const linkUrl = "/event.html?uuid=";
+    const linkUrl = "./event.html?uuid=";
     events.forEach((event) => {
         console.log(event);
         const list = document.querySelector("#list");

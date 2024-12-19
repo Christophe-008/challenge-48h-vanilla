@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>List events</title>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.min.js"></script>
+        <script type="module" src="./assets/js/app.js" defer></script>
+    </head>
+    <body class="page-events">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li>
+                        <a href="events.html">list events</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>List events...</h1>
+            <div id="list">
+                <!-- data -->
+            </div>
+
+            <template id="event">
+                <div><h2 class="title"></h2></div>
+                <div class="desc"></div>
+                <div><b>date event</b>: <span class="date"></span></div>
+                <div><b>uuid</b>: <span class="uuid"></span></div>
+                <div><a href="" class="link">join event</a></div>
+                <div class="qrcode"></div>
+            </template>
+        </main>
+    </body>
+</html>
